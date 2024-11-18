@@ -1,16 +1,15 @@
 #include <ESP8266WiFi.h>
 #include <DHT.h>
 
-// Definir tu red WiFi
+// Configuración de red WiFi
 const char* ssid = "NOMBRE_DE_TU_RED";  // Cambia por el nombre de tu red WiFi
 const char* password = "CONTRASEÑA_DE_TU_RED";  // Cambia por la contraseña de tu WiFi
 
-//Esto de servidor y endpoint no lo modifiques. 
-const char* server = "orquibio.online"; 
-const int port = 80; 
+// Cambiar por la IP local de tu computadora
+const char* server = "192.168.X.X";  // Reemplazar con la IP del computador
+const int port = 80;  // Puerto de tu servidor (por defecto 80 para HTTP)
 
-// Configurar el sensor DHT
-//ACA COLOCA EL PIN AL QUE CONECTASTE EL DHT . . . 
+// Configuración del sensor DHT
 #define DHTPIN 2  // Pin al que conectas el sensor DHT
 #define DHTTYPE DHT11  // O DHT22 si usas ese sensor
 
@@ -32,6 +31,8 @@ void setup() {
   }
   Serial.println();
   Serial.println("Conectado a la red WiFi.");
+  Serial.print("Dirección IP del ESP8266: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
@@ -39,7 +40,6 @@ void loop() {
   float temperature = dht.readTemperature();
   float humidity = dht.readHumidity();
 
-  // Verificar si hay error al leer el sensor
   if (isnan(temperature) || isnan(humidity)) {
     Serial.println("Error al leer del sensor DHT");
     return;
@@ -69,5 +69,5 @@ void loop() {
     Serial.println("Error al conectar con el servidor");
   }
 
-  delay(10000);  // Esperar 10 segundos antes de enviar otra lectura
+  delay(1800000);  // Esperar 30 minutos antes de enviar otra lectura
 }
