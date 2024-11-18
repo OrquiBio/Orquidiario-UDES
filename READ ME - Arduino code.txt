@@ -1,5 +1,5 @@
 Librerías que necesitas instalar:
-ESP8266WiFi: //Esto depende de como conectaste el internet . . . 
+ESP8266WiFi
 
 Esta librería permite que el Arduino se conecte a Internet usando el ESP8266.
 DHT Sensor Library:
