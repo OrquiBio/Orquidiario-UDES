@@ -1,0 +1,31 @@
+Librerías que necesitas instalar:
+ESP8266WiFi: //Esto depende de como conectaste el internet . . . 
+
+Esta librería permite que el Arduino se conecte a Internet usando el ESP8266.
+DHT Sensor Library:
+
+Esta librería se utiliza para leer datos del sensor DHT11.
+Adafruit Unified Sensor:
+
+Esta es una dependencia que el sensor DHT requiere.
+Pasos para instalar las librerías:
+
+
+Abrir el IDE de Arduino.
+
+Ir a: Sketch > Incluir librería > Administrar bibliotecas....
+
+Buscar las siguientes librerías en el gestor de librerías:
+
+ESP8266WiFi: Si usas el ESP8266, ya debería estar instalada si seleccionas la placa correcta (ESP8266 o ESP32).
+DHT sensor library: Específicamente la de Adafruit.
+Adafruit Unified Sensor: También de Adafruit.
+Instalar las librerías:
+
+Haz clic en cada una y selecciona "Instalar".
+Asegúrate de seleccionar la placa correcta:
+Si usas un ESP8266 o ESP32, ve a Herramientas > Placa, y selecciona la que estés utilizando (ESP8266 o ESP32).
+Asegúrate de tener también el puerto correcto seleccionado bajo Herramientas > Puerto.
+Después de eso:
+Cargar el código que te proporcioné en tu Arduino.
+Abrir el Monitor Serial en el IDE de Arduino para ver las lecturas y respuestas del servidor.
